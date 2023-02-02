@@ -4,6 +4,7 @@ import 'package:appphathanhbienlai/categorypage.dart';
 import 'package:appphathanhbienlai/homepage.dart';
 import 'package:appphathanhbienlai/settingpage.dart';
 import 'package:flutter/material.dart';
+import 'package:fluttertoast/fluttertoast.dart';
 
 void main() => runApp(const MyApp());
 
@@ -50,7 +51,9 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
   }
    void _AppbarButtonOnPress(){
     if(_selectedIndex==0){
-
+      ScaffoldMessenger.of(context).showSnackBar(SnackBar(
+        content: Text("Trả về biên lai"),
+      ));
     }
     else if(_selectedIndex==1){
       Navigator.push(context, MaterialPageRoute(builder: (context)=> AddSetting()));
