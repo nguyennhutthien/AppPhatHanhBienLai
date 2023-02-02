@@ -1,3 +1,5 @@
+import 'package:appphathanhbienlai/addcategory.dart';
+import 'package:appphathanhbienlai/addsetting.dart';
 import 'package:appphathanhbienlai/categorypage.dart';
 import 'package:appphathanhbienlai/homepage.dart';
 import 'package:appphathanhbienlai/settingpage.dart';
@@ -46,6 +48,16 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
       _selectedIndex = index;
     });
   }
+   void _AppbarButtonOnPress(){
+    if(_selectedIndex==0){
+
+    }
+    else if(_selectedIndex==1){
+      Navigator.push(context, MaterialPageRoute(builder: (context)=> AddSetting()));
+    }else if(_selectedIndex==2){
+      Navigator.push(context, MaterialPageRoute(builder: (context)=> AddCategory()));
+    }
+   }
 
   @override
   Widget build(BuildContext context) {
@@ -61,7 +73,7 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
             ),
             child: IconButton(
               onPressed: (){
-
+                _AppbarButtonOnPress();
               },
               icon: _iconList.elementAt(_selectedIndex),
             ),
