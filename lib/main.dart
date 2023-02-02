@@ -33,9 +33,14 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
     HomePage(),
     SettingPage(),
     CategoryPage(),
-    ExitPage(),
   ];
 
+  static const List<String> _appbartitileList= ["Phát hành","Cấu hình","Danh mục"];
+  static const List<Icon> _iconList= [
+    Icon(Icons.upload),
+    Icon(Icons.plus_one_outlined),
+    Icon(Icons.plus_one),
+  ];
 
   void _onItemTapped(int index) {
     setState(() {
@@ -45,18 +50,19 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
 
   @override
   Widget build(BuildContext context) {
+    String _appbartitle=_appbartitileList.elementAt(_selectedIndex);
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Phát hành'),
+        title: Text(_appbartitle),
         actions: <Widget>[
           Container(
             decoration: BoxDecoration(
-              shape: BoxShape.circle,
-              color: Colors.lightBlueAccent
+                shape: BoxShape.circle,
+                color: Colors.lightBlueAccent
             ),
             child: IconButton(
               onPressed: (){},
-              icon: Icon(Icons.upload),
+              icon: _iconList.elementAt(_selectedIndex),
             ),
           )
         ],
@@ -65,7 +71,7 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
         child: Pages.elementAt(_selectedIndex),
       ),
       bottomNavigationBar: BottomNavigationBar(
-        items: const <BottomNavigationBarItem>[
+        items: <BottomNavigationBarItem>[
           BottomNavigationBarItem(
             icon: Icon(Icons.upload),
             label: 'Phát hành',
@@ -81,15 +87,10 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
             label: 'Danh mục',
             backgroundColor: Colors.blue,
           ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.mobile_off),
-            label: 'Thoát',
-            backgroundColor: Colors.blue,
-          ),
         ],
 
         currentIndex: _selectedIndex,
-        selectedItemColor: Colors.black,
+        selectedItemColor: Colors.blue,
         onTap: _onItemTapped,
       ),
     );
