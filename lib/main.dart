@@ -38,8 +38,8 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
   static const List<String> _appbartitileList= ["Phát hành","Cấu hình","Danh mục"];
   static const List<Icon> _iconList= [
     Icon(Icons.upload),
-    Icon(Icons.plus_one_outlined),
-    Icon(Icons.plus_one),
+    Icon(Icons.add),
+    Icon(Icons.add),
   ];
 
   void _onItemTapped(int index) {
