@@ -1,4 +1,3 @@
-import 'package:appphathanhbienlai/ExitPage.dart';
 import 'package:appphathanhbienlai/categorypage.dart';
 import 'package:appphathanhbienlai/homepage.dart';
 import 'package:appphathanhbienlai/settingpage.dart';
@@ -61,7 +60,9 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
                 color: Colors.lightBlueAccent
             ),
             child: IconButton(
-              onPressed: (){},
+              onPressed: (){
+
+              },
               icon: _iconList.elementAt(_selectedIndex),
             ),
           )
